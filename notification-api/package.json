@@ -1,0 +1,30 @@
+{
+  "name": "ebay-notification-api",
+  "version": "1.0.0",
+  "description": "Notification API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Walisson Oliveira",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0",
+    "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "axios": "^0.19.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "cron": "^1.7.2",
+    "dotenv": "^8.2.0",
+    "email-validator": "^2.0.4",
+    "express": "^4.16.4",
+    "mongoose": "^5.8.7",
+    "node-cron": "^2.0.3",
+    "nodemailer": "^6.4.2"
+  }
+}

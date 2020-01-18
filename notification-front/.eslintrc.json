@@ -1,0 +1,70 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "extends": ["airbnb", "plugin:react/recommended"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "rules": {
+    "max-lines": ["error", { "max": 200, "skipBlankLines": true }],
+    "no-console": "error",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "max-len": "error",
+    "prefer-destructuring": ["off"],
+    "no-param-reassign": ["warn"],
+    "no-tabs": "warn",
+    "no-restricted-syntax": "warn",
+    "class-methods-use-this": "warn",
+    "no-return-assign": "warn",
+    "no-unused-expressions": "warn",
+    "no-mixed-operators": "warn",
+    "no-restricted-globals": "warn",
+    "consistent-return": "warn",
+    "object-curly-newline": "off",
+    "no-shadow": "warn",
+    "no-nested-ternary": "warn",
+    "guard-for-in": "warn",
+    "new-cap": ["warn"],
+    "import/first": ["warn"],
+    "import/prefer-default-export": ["off"],
+    "import/no-duplicates": "warn",
+    "react/prop-types": "warn",
+    "react/sort-comp": "warn",
+    "react/jsx-closing-tag-location": "warn",
+    "react/jsx-no-bind": "warn",
+    "react/no-did-mount-set-state": "warn",
+    "react/forbid-prop-types": "off",
+    "react/no-unused-state": "warn",
+    "react/require-default-props": "off",
+    "react/no-array-index-key": "warn",
+    "react/display-name": "warn",
+    "react/prefer-stateless-function": "warn",
+    "react/destructuring-assignment": ["off", "always"],
+    "jsx-a11y/click-events-have-key-events": "warn",
+    "jsx-a11y/no-noninteractive-element-interactions": "warn",
+    "jsx-a11y/anchor-is-valid": "warn",
+    "jsx-a11y/label-has-for": "warn",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "arrow-parens": "off"
+  }
+}

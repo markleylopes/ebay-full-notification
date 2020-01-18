@@ -1,0 +1,26 @@
+version: "3.1"
+
+services:
+  mongodb:
+    container_name: mongodb
+    image: mongo:bionic
+    restart: always
+
+  backend:
+    container_name: backend
+    image: node
+    volumes: 
+      - ../notification-api:/usr/src/service
+    working_dir: /usr/src/service
+    restart: always
+    ports:
+      - 3000:3000
+    command: bash -c 'npm i && npm start'
+    depends_on:
+      - mongodb
+
+  frontend:
+    container_name: frontend
+    build: ./notification-front
+    ports:
+      - 80:80

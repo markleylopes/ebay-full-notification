@@ -1,5 +1,5 @@
 # Ebay Notification Api
-Através dessa api é possível cadastrar notificações para email, ao escolher um email, uma palavra e um intervalo de (2, 10, ou 30 minutos), e salvar essas informações, a api disparará nesse intervalo uma consulta ao ebay dos 3 produtos mais baratos para seu termo de pesquisa e você receberá a menssagem no email cadastrado;
+Através dessa api é possível cadastrar notificações para email, ao escolher um email, uma palavra e um intervalo de (2, 10, ou 30 minutos), e salvar essas informações, a api disparará nesse intervalo uma consulta ao ebay dos 3 produtos mais baratos para seu termo de pesquisa e você receberá a mensagem no email cadastrado;
 ## Requirements
 1. Node 12+
 2. Docker
@@ -8,7 +8,7 @@ Através dessa api é possível cadastrar notificações para email, ao escolher
 ## Configuração do backend para a api
 No diretório do backend [/notification-api] verá um arquivo .env, edite para inserir suas credenciais, você precisa ter uma chave de acesso do ebay developers,
 atribua seu app name do ebay à variável EBAY_APP_NAME=
-Também precisaŕa de configuração para servidor smtp, para ser possível enviar email, se não tiver configuração smtp, abra o link https://ethereal.email , clique em [ Create Ethereal Account], você verá uma configuração smtp, utilize, insira nas seguintes variáveis:
+Também precisará de configuração para servidor smtp, para ser possível enviar email, se não tiver configuração smtp, abra o link https://ethereal.email , clique em [ Create Ethereal Account], você verá uma configuração smtp, utilize, insira nas seguintes variáveis:
 SMTP_HOST=
 SMTP_PORT=
 SMTP_SECURE=false
@@ -48,13 +48,4 @@ No frontend está sendo utilizado as seguintes tecnologias:
 React, MaterialUi, Redux, React Hooks, Css in JS
 
 ## Como funciona? 
-O módulo src/services/cron.js 3 crons no respectivo tempo  2, 10, 30 minutos, que efetuará uma requisição para o mongo db,  quando a solicitção for resolvida será feito um promisse com todos os termos cadastrados para consultar a api do ebay, ao retorno dessa promisse uma nova promisse é disparada enviando e email para as pessoas cadastradas em seus respectivos tempos, simples não é?!
-
-
-
-
-
-
-
-
-
+O módulo src/services/cron.js 3 crons no respectivo tempo  2, 10, 30 minutos, que efetuará uma requisição para o mongo db,  quando a solicitação for resolvida será feito um promisse com todos os termos cadastrados para consultar a api do ebay, ao retorno dessa promisse uma nova promisse é disparada enviando e email para as pessoas cadastradas em seus respectivos tempos, simples não é?!

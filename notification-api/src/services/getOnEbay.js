@@ -1,9 +1,7 @@
 const axios = require('axios');
-
-const EBAY_SECURITY_APPNAME = 'walisson-alertsAp-PRD-c90f2f5e3-5a7775bd';
+const EBAY_SECURITY_APPNAME = process.env.EBAY_APP_NAME;
 
 module.exports = async ({ keywords = 'dog', email }) => {
-  // console.log('word: ', keywords, '| email: ', email);
 
   const url = `https://svcs.ebay.com/services/search/FindingService/v1?\
 SECURITY-APPNAME=${EBAY_SECURITY_APPNAME}\

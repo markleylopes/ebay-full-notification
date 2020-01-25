@@ -10,7 +10,7 @@ services:
     container_name: backend
     image: node
     volumes: 
-      - ../notification-api:/usr/src/service
+      - ./notification-api:/usr/src/service
     working_dir: /usr/src/service
     restart: always
     ports:

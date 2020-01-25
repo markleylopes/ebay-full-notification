@@ -1,22 +1,35 @@
 const nodemailer = require('nodemailer');
 
-module.exports = async function main({ to, html, subject = 'Sem assunto' }) {
-  // Create a test acount for smtp
-  const smtpHost = process.env.SMTP_HOST;
-  const smtpPort = process.env.SMTP_PORT;
-  const smtpSecure = process.env.SMTP_SECURE;
-  const smtpUser = process.env.SMTP_USER;
-  const smtpPass = process.env.SMTP_PASS;
 
+module.exports = async function main({ to, html, subject = 'Sem assunto' }) {
+  // Create a test acount for smtp  
   const testAccount = await nodemailer.createTestAccount();
 
+  const {
+    SMTP_HOST = 'smtp.ethereal.email',
+    SMTP_PORT = 587,
+    SMTP_USER = testAccount.user,
+    SMTP_PASS = testAccount.pass,
+    SMTP_SECURE,
+   } = process.env;
+
+   const smtpPort = +SMTP_PORT;
+   let smtpSecure = false;
+
+   try {
+     const converted = JSON.parse(SMTP_SECURE);
+     if(typeof converted === "boolean" ) smtpSecure = converted;
+   } catch (error) {
+    smtpSecure = false;
+   }
+
   const transporter = nodemailer.createTransport({
-    host: smtpHost || 'smtp.ethereal.email',
-    port: smtpPort || 587,
-    secure: smtpSecure || false,
+    host: SMTP_HOST,
+    port: smtpPort,
+    secure: smtpSecure,
     auth: {
-      user: smtpUser || testAccount.user,
-      pass: smtpPass || testAccount.pass,
+      user: SMTP_USER,
+      pass: SMTP_PASS,
     },
   });
 
